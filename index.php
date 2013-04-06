@@ -5,10 +5,12 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>OpenTube</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <?php
+        // put your code here
+        ?>
     </body>
 </html>
