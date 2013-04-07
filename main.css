@@ -1,0 +1,26 @@
+/* 
+    Document   : main
+    Created on : 6-Apr-2013, 3:31:13 PM
+    Author     : patrick
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.titlec {
+  font-size: small;
+}
+ul.videos li {
+  width: 10em;
+  margin-bottom: 1em;
+}
+ul.videos
+{
+  margin-bottom: 1em;
+  padding-left : 0em;
+  margin-left: 0em;
+  list-style: none;
+}
+

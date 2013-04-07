@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Videos</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src='search.js'></script>
+    </head>
+    <body>
+        <div id="bar" style="disply:inline">
+            <input id="s" type="text" onkeydown="enter(event)">
+            <input type="button" onclick="search()" value="Search">
+        </div>
+        <div id="playerContainer" style="width: 1200px; height: 1000px; float: left;">
+            <object id="player"></object>
+        </div>
+        <div id="videos2" style="float: right"></div>
+        <script 
+            type="text/javascript" 
+            id="test"
+            src="http://gdata.youtube.com/feeds/api/videos?alt=json-in-script&callback=showMyVideos2&max-results=30">
+        </script>
+    </body>
+</html>
