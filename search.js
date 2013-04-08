@@ -27,9 +27,9 @@ function showMyVideos2(data) {
     }
     html.push('</ul><br style="clear: left;"/>');
     document.getElementById('videos2').innerHTML = html.join('');
-    if (entries.length > 0) {
-        loadVideo(entries[0].media$group.media$content[0].url, false);
-    }
+//    if (entries.length > 0) {
+//        loadVideo(entries[0].media$group.media$content[0].url, false);
+//    }
 }
 
 function search() {
