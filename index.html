@@ -4,7 +4,7 @@
     Author     : patrick dube
     Description:
        index
-        -->
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +12,15 @@
         <link rel="stylesheet" type="text/css" href="main.css">
         <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src='search.js'></script>
+        <script>
+            $(function() {
+                $("#desc").tabs();
+                $("#vids").tabs();
+            });
+        </script>        
     </head>
     <body>
         <div id="bar">
@@ -22,18 +30,26 @@
         </div>
         <div id="content">
             <div id="playerContainer" >
+                
                 <object id="player"></object>
             </div>
-            <div id="sidebar">
-                <div id="videos2" title="Search"></div>
-                <div id="comments" title="Comments"></div>
-                <div id="suggested" title="Suggested"></div>
+            <div id="desc" class="sidebar">
+                <ul>
+                    <li class="tabb"><a href="#description">Description</a></li>
+                    <li class="tabb"><a href="#comments">Comments</a></li>
+                </ul>
+                <div id="description" title="Description">description</div>
+                <div id="comments" title="Comments">comments</div>
+
+            </div>
+            <div id="vids" class="sidebar">
+                <ul>
+                    <li class="tabb"><a href="#videos2">Search</a></li>
+<!--                    <li class="tabb"><a href="#suggested">Suggested</a></li>-->
+                </ul>
+                <div id="videos2" title="Search">test</div>
             </div>
         </div>
-        <script 
-            type="text/javascript" 
-            id="test"
-            src="http://gdata.youtube.com/feeds/api/videos?alt=json-in-script&callback=showMyVideos2&max-results=30">
-        </script>
+        <script type="text/javascript" id="test" src="http://gdata.youtube.com/feeds/api/videos?alt=json-in-script&callback=showMyVideos2&max-results=30"></script>
     </body>
 </html>

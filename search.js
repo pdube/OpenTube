@@ -10,6 +10,7 @@ function loadVideo(playerUrl, autoplay) {
             playerUrl + '&rel=1&border=0&fs=1&autoplay=' +
             (autoplay ? 1 : 0), 'player', '1100', '700', '9.0.0', false,
             false, {allowfullscreen: 'true'});
+            
 }
 
 function showMyVideos2(data) {
@@ -32,6 +33,10 @@ function showMyVideos2(data) {
 //    }
 }
 
+function enqueue(){
+    
+}
+
 function search() {
     var t = document.getElementById("test");
     t.parentNode.removeChild(t);
@@ -39,7 +44,7 @@ function search() {
     element.type = "text/javascript";
     element.id = "test";
     element.src= 'http://gdata.youtube.com/feeds/api/videos?alt=json-in-script&callback=showMyVideos2&max-results=10&q='+encodeURIComponent(document.getElementById('s').value);
-    document.body.appendChild(element); 
+    document.body.appendChild(element);
 }
 function enter(e){
         if(e.keyCode === 13){
