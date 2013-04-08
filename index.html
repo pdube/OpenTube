@@ -18,12 +18,18 @@
         <div id="bar">
             <a href="index.html"><img src="./opentube2.jpg" ></a>
             <input id="s" type="text" onkeydown="enter(event)">
-            <input type="image" src="search.jpg" onclick="search()" value="Search">
+            <input type="image" src="search.jpg" onclick="search()" id="srch" alt="Search">
         </div>
-        <div id="playerContainer" >
-            <object id="player"></object>
+        <div id="content">
+            <div id="playerContainer" >
+                <object id="player"></object>
+            </div>
+            <div id="sidebar">
+                <div id="videos2" title="Search"></div>
+                <div id="comments" title="Comments"></div>
+                <div id="suggested" title="Suggested"></div>
+            </div>
         </div>
-        <div id="videos2" ></div>
         <script 
             type="text/javascript" 
             id="test"
