@@ -1,11 +1,14 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+    Document   : search
+    Created on : 6-Apr-2013, 3:31:13 PM
+    Author     : patrick dube
+    Description:
+        search
+*/
 function loadVideo(playerUrl, autoplay) {
     swfobject.embedSWF(
             playerUrl + '&rel=1&border=0&fs=1&autoplay=' +
-            (autoplay ? 1 : 0), 'player', '1100', '800', '9.0.0', false,
+            (autoplay ? 1 : 0), 'player', '1100', '700', '9.0.0', false,
             false, {allowfullscreen: 'true'});
 }
 

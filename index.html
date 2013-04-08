@@ -1,7 +1,10 @@
 <!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
+    Document   : index
+    Created on : 6-Apr-2013, 3:31:13 PM
+    Author     : patrick dube
+    Description:
+       index
+        -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,14 +15,15 @@ and open the template in the editor.
         <script src='search.js'></script>
     </head>
     <body>
-        <div id="bar" style="disply:inline">
+        <div id="bar">
+            <a href="index.html"><img src="./opentube2.jpg" ></a>
             <input id="s" type="text" onkeydown="enter(event)">
             <input type="button" onclick="search()" value="Search">
         </div>
-        <div id="playerContainer" style="width: 1200px; height: 1000px; float: left;">
+        <div id="playerContainer" style="width: 1200px; height: 800px; float: left;border:1px solid black">
             <object id="player"></object>
         </div>
-        <div id="videos2" style="float: right"></div>
+        <div id="videos2" style="float: left; height:800px; width:250px; overflow-y: auto;border:1px solid black; margin-left: 10px"></div>
         <script 
             type="text/javascript" 
             id="test"
