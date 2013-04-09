@@ -8,7 +8,7 @@
 
 function loadVideo(playerUrl,videoId, autoplay) {
     swfobject.embedSWF(
-            playerUrl + '&rel=1&border=0&fs=1&enablejsapi=1&playerapiid=ytplayer&autoplay=' +
+            playerUrl + '&rel=1&border=0&fs=1&enablejsapi=1&autoplay=' +
             (autoplay ? 1 : 0), 'player', '1100', '700', '9.0.0', false,
             false, {allowfullscreen: 'true',allowScriptAccess:'always'});
    $.getScript(videoId+'?v=2&alt=json-in-script&callback=info');
@@ -25,7 +25,7 @@ function onytplayerStateChange(newState) {
    if(newState ===0){
        var list = document.getElementById('q');
        var playerUrl = list.getElementsByTagName('li')[0].getAttribute("id");
-       loadVideo(playerUrl, playerUrl, true); //change playerUrl to videoId
+       loadVideo(playerUrl, playerUrl, true); //change playerUrl to 
        remove(playerUrl);
    }
 }

@@ -52,7 +52,9 @@ body{
 }
 
 #playerContainer {
-    min-width: 1200px;
+    min-width: 1100px;
+    padding-left:100px;
+    padding-top:30px;
     height: 750px;
     float:left;
 }
