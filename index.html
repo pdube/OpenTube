@@ -30,24 +30,29 @@
         </div>
         <div id="content">
             <div id="playerContainer" >
-                
                 <object id="player"></object>
             </div>
-            <div id="desc" class="sidebar">
-                <ul>
-                    <li class="tabb"><a href="#description">Description</a></li>
-                    <li class="tabb"><a href="#comments">Comments</a></li>
-                </ul>
-                <div id="description" title="Description">description</div>
-                <div id="comments" title="Comments">comments</div>
+            <div id="sidebar">
+                <div id="desc" class="sidebar">
+                    <ul>
+                        <li class="tabb"><a href="#description">Description</a></li>
+                        <li class="tabb"><a href="#comments">Comments</a></li>
+                    </ul>
+                    <div id="description" title="Description">description</div>
+                    <div id="comments" title="Comments">comments</div>
 
+                </div>
+                <div id="vids" class="sidebar">
+                    <ul>
+                        <li class="tabb"><a href="#videos2">Search</a></li>
+                        <!--                    <li class="tabb"><a href="#suggested">Suggested</a></li>-->
+                    </ul>
+                    <div id="videos2" title="Search"></div>
+                </div>
             </div>
-            <div id="vids" class="sidebar">
-                <ul>
-                    <li class="tabb"><a href="#videos2">Search</a></li>
-<!--                    <li class="tabb"><a href="#suggested">Suggested</a></li>-->
+            <div id="queue">
+                <ul id="q">
                 </ul>
-                <div id="videos2" title="Search">test</div>
             </div>
         </div>
         <script type="text/javascript" id="test" src="http://gdata.youtube.com/feeds/api/videos?alt=json-in-script&callback=showMyVideos2&max-results=30"></script>
