@@ -12,11 +12,11 @@ root {
 .titlec {
   font-size: small;
 }
-ul.videos2 li {
-  width: 10em;
+ul.videos li {
+/*  width: 10em;*/
   margin-bottom: 1em;
 }
-ul.videos2
+ul.videos
 {
   margin-bottom: 1em;
   padding-left : 0em;
@@ -68,8 +68,10 @@ body{
 #desc ,#vids {
     float: left;
     min-width: 300px;
+    max-width:300px;
     height:750px;
-    overflow-y: auto
+    overflow-y: auto;
+    word-wrap:break-word;
 }
 
 #content{

@@ -5,12 +5,14 @@
  Description:
  search
  */
-function loadVideo(playerUrl, autoplay) {
+
+function loadVideo(playerUrl,videoId, autoplay) {
     swfobject.embedSWF(
             playerUrl + '&rel=1&border=0&fs=1&enablejsapi=1&playerapiid=ytplayer&autoplay=' +
             (autoplay ? 1 : 0), 'player', '1100', '700', '9.0.0', false,
             false, {allowfullscreen: 'true',allowScriptAccess:'always'});
-   onYouTubePlayerReady()
+   $.getScript(videoId+'?v=2&alt=json-in-script&callback=info');
+   onYouTubePlayerReady();
     
 }
 
@@ -22,8 +24,9 @@ function onYouTubePlayerReady() {
 function onytplayerStateChange(newState) {
    if(newState ===0){
        var list = document.getElementById('q');
-       var first = list.getElementsByTagName('li')[0];
-       $('#q li').click();
+       var playerUrl = list.getElementsByTagName('li')[0].getAttribute("id");
+       loadVideo(playerUrl, playerUrl, true); //change playerUrl to videoId
+       remove(playerUrl);
    }
 }
 
@@ -38,8 +41,8 @@ function showMyVideos2(data) {
         var thumbnailUrl = entry.media$group.media$thumbnail[0].url;
 
         var playerUrl = entry.media$group.media$content[0].url;
-        var videoId= entry.media$group.yt$videoid;
-        html.push('<li onclick="enqueue(\'',playerUrl,'\'',videoId,')">',
+        var videoId= entry.id.$t;
+        html.push('<li onclick="enqueue(\'',playerUrl,'\',\'',videoId,'\')">',
                 '<span class="titlec">', title, '...</span><br /><img src="',
                 thumbnailUrl, '" width="130" height="97"/>', '</span></li>');
     }
@@ -50,13 +53,18 @@ function showMyVideos2(data) {
 //    }
 }
 
-function enqueue(playerUrl,videoId) {
-    $.getScript('http://gdata.youtube.com/feeds/api/videos/' + encodeURIComponent(videoId) + '?v=2&alt=json-in-script&callback=info');
-    document.getElementById('q').innerHTML += '<li onclick="loadVideo(\''+ playerUrl+ '\', true);remove(\''+playerUrl+'\');"><img src="opentube2.jpg" width="130" height="97"/></li>';
+function enqueue(playerUrl,videoId){
+    document.getElementById('q').innerHTML += '<li id=\''+playerUrl+'\' onclick="loadVideo(\''+ playerUrl+ '\',\''+videoId+'\', true);remove(\''+playerUrl+'\');"><img src="opentube2.jpg" width="130" height="97"/></li>';
 }
 
+function remove(url){
+    var t = document.getElementById(url);
+    t.parentNode.removeChild(t);
+}
 
 function info(data){
+    var description = data.entry.media$group.media$description.$t;
+    document.getElementById('description').innerHTML=description;
     
 }
 
